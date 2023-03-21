@@ -1,6 +1,7 @@
 
 const form = document.querySelector('#newsletter')
 let inputEmail = document.querySelector('#email')
+let btn = document.querySelector('#button')
 
 const subscribe = (event) => {
     event.preventDefault()
@@ -12,15 +13,12 @@ const subscribe = (event) => {
 }
 
 const checkEmail = (event) => {
-    event.preventDefault()
     if ((inputEmail.value === '') || ((inputEmail.value).includes('@') === false)) {
         inputEmail.classList.add('email--blank')
-        let btn = document.querySelector('#button')
         btn.disabled = true
         btn.classList.add('button--disabled')
     } else {
         inputEmail.classList.remove('email--blank')
-        btn = document.querySelector('#button')
         btn.disabled = false
         btn.classList.remove('button--disabled')
     }
